@@ -1,0 +1,80 @@
+Chức năng 
+//+ hiển thị những môn học theo kì , khoa 
++ tìm kiếm , đăng ký , hủy ,
+
+database 
+
+sinh viên 
++mã sv 
++mật khẩu
++họ tên
++lớp
+//+chương trình ( chính quy )
+//+khoa
++số tín chỉ tối đa ( tính theo cảnh cao )
++ điểm môn học
++ mã lớp 
+
+
+search 
+
+môn học
++mã môn học 
+//+kỳ học 
++tên môn học
++thời gian học
++số tín chỉ
+//+ khối ngành
+
+
+
+hệ thống đki ( liên kết với 3 thg còn lại ) (admin)
++ mã lớp 
++ mã học phần 
++ tên học phần 
++ ghi chú 
++ loại lớp 
++ trạng thái (đã trùng lịch ,đã đầy hay chưa 50/70)
++ số lượng sv tối đa
++ số lượng sv hiện tại
++ khoa
++ khóa ngoại :mã  sinh viên
++ khóa ngoại :mã  môn học
++ khóa ngoại :mã  giáo viên
++ sl lớp
++ phòng học
++ tuần học
++ mở/đóng đki học
+
+
+FE
+Giao diện :
+* đăng nhập 
+	+sv 
+	+gv
+* đăng kí 
+SINH VIÊN 
+trang chủ : nút search + các môn đã đki ( nút hủy bên cạnh) + 
+nút thời khóa biểu 
+sv tìm search -> trang khác 1 -> trang khác 2 
+-> trang thời khóa biểu -> lấy môn đã đki 
+
+
+GIÁO VIÊN
+trang chủ : bảng những môn đc phân công + nút dssv( tạo trang khác )
+
+
+ADMIN
+
+->lấy tất cả các môn học
+-> nút lấy lịch gv
+-> phân công giảng viên  CRUD
+-> mở đóng kì học 
+
+B1 : đăng nhập 
+B2 : vào thông tin danh sách lớp mở -> trang đki học
+
+
+
+note: check trùng lịch, tích hợp (search + get giống trường),
+search : giải -> giải 1 , giải 2 -> danh sách lớp học 
