@@ -1,6 +1,6 @@
 <?php
-include '../config/header.php';
-include '../config/menu.php';
+include '../index/header.php';
+include '../menu.php';
 ?>
 <div class="main-content">
 <div class="wrapper">
@@ -20,7 +20,7 @@ include '../config/menu.php';
             <th>Hủy học phần</th>
         </tr>
         <?php
-        include '../config/config.php';
+        include '../config.php';
         $sql = "SELECT * FROM dang_ki_tin_chi";
         $res = mysqli_query($conn,$sql);
         if(mysqli_num_rows($res)>0){
@@ -51,5 +51,5 @@ include '../config/menu.php';
 </div>
 </div>
 <?php
-include '../config/footer.php'
+include '../index/footer.php'
 ?>
