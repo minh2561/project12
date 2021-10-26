@@ -9,8 +9,8 @@
     define('DB_PASSWORD', '');
     define('DB_NAME', 'dang_ki_tin_chi');
     
-    $conn = mysqli_connect(LOCALHOST, DB_USERNAME, DB_PASSWORD) or die(mysqli_error()); //Database Connection
-    $db_select = mysqli_select_db($conn, DB_NAME) or die(mysqli_error()); //SElecting Database
+    $conn = mysqli_connect(LOCALHOST, DB_USERNAME, DB_PASSWORD); //Database Connection
+    $db_select = mysqli_select_db($conn, DB_NAME); //SElecting Database
 
 
 ?>
