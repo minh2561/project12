@@ -1,6 +1,6 @@
 <?php
 include 'header-sinhvien.php';
-include '../menu.php';
+include 'menu.php';
 
 ?>
 <div class="main-content">
