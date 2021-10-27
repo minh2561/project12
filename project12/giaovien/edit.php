@@ -3,14 +3,7 @@ include '../sinhvien/header-sinhvien.php';
 include 'menu.php';
 include '../config.php';
 $id = $_GET['id'];
-$sql = "SELECT * FROM dang_ki_tin_chi WHERE lop_id = '$id'";
-$result = mysqli_query($conn, $sql);
-if($result==true){
-    $count = mysqli_num_rows($result);
-    if ($count == 1){
-        $row = mysqli_fetch_assoc($result);
-    }
-}
+
 ?>
 <div class="main-content">
     <div class="wrapper">
