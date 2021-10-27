@@ -1,16 +1,17 @@
 <?php
-include '../index/header.php';
+include 'header-sinhvien.php';
+include '../menu.php';
 ?>
 <div class="main-content">
 <div class="wrapper">
     <h1>Đăng kí học</h1>
     <div>
         <input type="text" placeholder="nhap mon hoc ..." onchange="handleGetName(this.value)">
-        <button class="btn btn-primary" id="btnSearch"><a id="hrefSearch">tim kiem</a></button>
+        <button class="btn btn-primary" id="btnSearch"><a id="hrefSearch">Tìm kiếm</a></button>
     </div>
     <table class="tbl-full">
         <tr>
-            <th>STT</th>
+            <th class ='px-3'>STT</th>
             <th>Lớp học phần</th>
             <th>Tên học phần</th>
             <th>Trạng thái</th>
@@ -20,7 +21,8 @@ include '../index/header.php';
             <th>Tuần học</th>
             <th>Gio học</th>
             <th>Trạng thái đăng kí</th>
-            <th>Hủy học phần</th>
+            <th>Đăng kí</th>
+           
         </tr>
         <?php
         include '../config.php';
@@ -40,7 +42,8 @@ include '../index/header.php';
                 echo '<td>'.$row['lop_tuan_hoc'].'</td>'; 
                 echo '<td>'.$row['lop_gio_hoc'].'</td>';
                 echo '<td>'.$row['lop_trang_thai_dang_ki'].'</td>'; 
-                echo '<td><a href ="delete.php?id='.$row['lop_id'].'">Hủy</td>'; 
+                echo '<td><a href ="result.php?id='.$row['lop_id'].'" ><i class="fas fa-check-circle text-success"></i></a></td>'; 
+                
                 echo '</tr>';
               
             }
