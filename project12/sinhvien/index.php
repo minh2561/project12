@@ -1,10 +1,13 @@
 <?php
 include '../index/header.php';
-include '../menu.php';
 ?>
 <div class="main-content">
 <div class="wrapper">
     <h1>Đăng kí học</h1>
+    <div>
+        <input type="text" placeholder="nhap mon hoc ..." onchange="handleGetName(this.value)">
+        <button class="btn btn-primary" id="btnSearch"><a id="hrefSearch">tim kiem</a></button>
+    </div>
     <table class="tbl-full">
         <tr>
             <th>STT</th>
@@ -47,9 +50,23 @@ include '../menu.php';
 
         
     </table>
+    
+</div>
+</div>
 
-</div>
-</div>
+<script>
+    var search ;
+function handleGetName(value){
+    search = value;
+}
+
+$(document).ready(async function(){
+    $("#btnSearch").click(function(){
+        $("#hrefSearch").attr("href",`search.php?q=${search}`)
+    })
+})
+
+</script>
 <?php
 include '../index/footer.php'
 ?>
