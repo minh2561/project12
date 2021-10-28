@@ -13,24 +13,56 @@
         </div>
         <div class="ground">
             <div class="sign">
-                <div class="in">               
+                <div class="in">   
+                    <form action="" method="POST" >            
                     <div class="sign_in form-floating mb-3">
-                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                        <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com">
                         <label for="floatingInput">Email address</label>
                     </div>
                     <div class="sign_in form-floating">
-                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                        <input type="password" name="password"class="form-control" id="floatingPassword" placeholder="Password">
                         <label for="floatingPassword">Password</label>
                     </div>
                     <div class="link">             
                         <a href="../index.php"><p>Bạn là sinh viên</p></a>
                         <a href="./index_gv.php"><p>Bạn là giảng viên</p></a>
-                        <button type="submit" class="button btn btn-outline-primary">Đăng nhập</button>
+                        <input type="submit" name="submit">
                     </div>
+                    </form>
                 </div>
             </div>
-        </div>     
+            
+        </div>      
+                <?php 
+                if(isset($_SESSION['login']))
+                {
+                    echo $_SESSION['login'];
+                    unset($_SESSION['login']);
+                }
+                ?>
     </div>
+
+
+<?php 
+if(isset($_POST['submit'])){
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $sql = "SELECT * FROM admin WHERE admin_email='$email' AND admin_password='$password'";
+    $res = mysqli_query($conn, $sql);
+    $count = mysqli_num_rows($res);
+    echo $email;
+    if($count==1)
+        {   
+            $row = mysqli_fetch_assoc($res);
+            $id =  $row['admin_id'];
+            $_SESSION['admin'] = $id;
+            header('location:'.SITEURL.'admin/index.php');
+        }else{
+            $_SESSION['login'] = "<div class='error text-center'>Username or Password did not match.</div>";
+        }
+}
+?>
+
 <?php
-    include './footer.php';
+    include 'footer.php';
 ?>
