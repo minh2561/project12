@@ -14,3 +14,4 @@
     <title>Đăng nhập</title>
 </head>
 <body>
+    <?php include('config.php') ?>
