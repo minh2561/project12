@@ -1,95 +1,67 @@
 <?php
- include('../index/header.php');
-include('menu.php');
-include('check_login_sv.php');
+    include './index/header.php';
 ?>
-<div class="main-content">
-<div class="wrapper">
-    <?php 
-        if(isset($_SESSION['delete']))
-        {
-            echo $_SESSION['delete'];
-            unset($_SESSION['delete']);
-        }
-        if(isset($_SESSION['add']))
-        {
-            echo $_SESSION['add']; //Displaying Session Message
-            unset($_SESSION['add']); //REmoving Session Message
-        }
-    ?>
-    <h1>Đăng kí học</h1>
-    <div>
-        <input type="text" placeholder="Nhập tên môn học" onchange="handleGetName(this.value)">
-        <button class="btn btn-primary" id="btnSearch"><a id="hrefSearch">Tìm kiếm</a></button>
+    <div class="back">
+        <div class="tieude">
+            <div class="dangki">
+                <h2>TRANG ĐĂNG KÝ HỌC TẬP SINH VIÊN</h2>
+            </div>
+            <div class="dangki">
+                <h2>TRƯỜNG ĐẠI HỌC BÁCH KHOA HÀ NỘI</h2><br>
+                <h6>Đăng nhập vào hệ thống đăng ký</h6>
+            </div>
+        </div>
+        <div class="ground">
+            <div class="sign">
+                <div class="in">     
+                    <form action="" method="POST">          
+                    <div class="sign_in form-floating mb-3">
+                        <input name="email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                        <label for="floatingInput">Email address</label>
+                    </div>
+                    <div class="sign_in form-floating">
+                        <input name="password" type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                        <label for="floatingPassword">Password</label>
+                    </div>
+                    <div class="link">             
+                        <a href="./index/index_admin.php"><p>Bạn là quản trị viên</p></a>
+                        <a href="./index/index_gv.php"><p>Bạn là giảng viên</p></a>
+                        <input type="submit" name="submit">
+                    </div>
+                    </form>
+                </div>
+            </div>
+            
+        </div>      
+                <?php 
+                if(isset($_SESSION['login-sv']))
+                {
+                    echo $_SESSION['login-sv'];
+                    unset($_SESSION['login-sv']);
+                }
+                ?>
     </div>
-    <table class="table">
-        <thead>
-        <tr>
-            <th scope="col">STT</th>
-            <th scope="col">Lớp học phần</th>
-            <th scope="col">Tên học phần</th>
-            <th scope="col">Trạng thái</th>
-            <th scope="col">Tổng sinh viên</th>
-            <th scope="col">Số sinh viên</th>
-            <th scope="col">Tên phòng</th>
-            <th scope="col">Tuần học</th>
-            <th scope="col">Gio học</th>
-            <th scope="col">Trạng thái đăng kí</th>
-            <th scope="col">Đăng kí</th>   
-        </tr>
-        </thead>
-        <?php
-        $id = $_SESSION['sinh_vien'];
-        $sql = "SELECT * FROM `dang_ki_tin_chi` JOIN relation_sv_mh , sinh_vien WHERE sinh_vien.sv_id = relation_sv_mh.sv_id AND relation_sv_mh.lop_id = dang_ki_tin_chi.lop_id AND sinh_vien.sv_id = '$id'";
-        $res = mysqli_query($conn,$sql);
-        $count =  mysqli_num_rows($res);
-        if($count > 0){
-            $i = 1;
-            while($row=mysqli_fetch_assoc($res)){
-                echo '<tbody>';
-                echo '<tr>';
-                echo '<td>'.$i++.'</td>';
-                echo '<td>'.$row['lop_hoc_phan'].'</td>';
-                echo '<td>'.$row['lop_ten_hoc_phan'].'</td>';
-                echo '<td>'.$row['lop_trang_thai'].'</td>';
-                echo '<td>'.$row['lop_max_sv'].'</td>';
-                echo '<td>'.$row['lop_current_sv'].'</td>';
-                echo '<td>'.$row['lop_ten_phong'].'</td>';
-                echo '<td>'.$row['lop_tuan_hoc'].'</td>'; 
-                echo '<td>'.$row['lop_gio_hoc'].'</td>';
-                echo '<td>'.$row['lop_trang_thai_dang_ki'].'</td>'; 
-                echo '<td><i class="fas fa-check-circle text-success"></i></td>'; 
-                echo '<td><a href="cancelSubject.php?lop_id='.$row['lop_id'].'&sv_id='.$id.'">Huy</a></td>'; 
-                
-                echo '</tr>';
-                echo '</tbody>';
-              
-            }
+
+
+<?php 
+if(isset($_POST['submit'])){
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $sql = "SELECT * FROM sinh_vien WHERE sv_email='$email' AND sv_password='$password'";
+    $res = mysqli_query($conn, $sql);
+    $count = mysqli_num_rows($res);
+    if($count==1)
+        {   
+            $row = mysqli_fetch_assoc($res);
+            $id =  $row['sv_id'];
+            $_SESSION['sinh_vien'] = $id;
+            header('location:'.SITEURL.'sinhvien/index.php');
         }else{
-            echo "<h1>Ban chua dang ki mon hoc nao ca</h1>";
+            $_SESSION['login-sv'] = "<div class='error text-center'>Username or Password did not match.</div>";
         }
-        ?>
-
-
-        
-    </table>
-    
-</div>
-</div>
-<?php
-include('../index/footer.php');
-?>
-<script>
-    var search ;
-function handleGetName(value){
-    search = value;
 }
+?>
 
-$(document).ready(async function(){
-    $("#btnSearch").click(function(){
-        $("#hrefSearch").attr("href",`search.php?q=${search}`)
-    })
-})
-
-</script>
-
+<?php
+    include './index/footer.php';
+?>
