@@ -58,10 +58,9 @@
 .button{
     margin-left: 185px;
 }
-
-
 a{
     text-decoration: none;
+    color: black;
 }
 .img_back{
     background-image: url(../images/back_admin.jpg);
@@ -91,34 +90,41 @@ a{
     font-weight: bolder;
     background-image: url(../images/van_go.jpg);
 }
-
-
-
-
-
-
-
-
 .row {
     --bs-gutter-x: unset;
 }
-
-
 .end{
     width: 100%;
     float: left;
     background: url('../images/footer.jpg') no-repeat top;
     height: 100px;
 }
+.subject{
+    width: 100px;
+}
+.icon{
+    width: 30px;
+    top: 0%;
+}
 
 
 
 
 
-
-
-
-
+.container_swap{
+    width: 20%px;  
+}   
+.div_left{   
+    width: 80%;    
+    float: left;    
+    text-align: center;    
+}    
+.div_right{   
+    width: 20%;   
+    float: right;   
+    text-align: center;
+}    
+    
 
 
 
