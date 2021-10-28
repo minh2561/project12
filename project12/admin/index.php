@@ -8,7 +8,12 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th scope="col">Môn học</th>
+                            <th scope="col"> 
+                                <div class="container_swap">
+                                    <div class="div_left">Môn học </div>
+                                    <div class="div_right"><a href="#"><i class="bi bi-clipboard-plus"></i></a></div>
+                                </div>
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -19,7 +24,12 @@
                 if(mysqli_num_rows($result)>0) {
                     while($row = mysqli_fetch_assoc($result)) {
                         echo '<tr>';
-                            echo '<th scope="row"><a href="#">'.$row['mh_ten_mon'].'</a></th>';
+                            echo '<th scope="row">';
+                                echo '<div class="container_swap">';
+                                    echo '<div class="div_left"><a href="#">'.$row['mh_ten_mon'].'</div>';
+                                    echo '<div class="div_right"><a href="#"><i class="fas fa-pencil-alt"></i></a></div>';
+                                echo '</div>';
+                            echo '</th>';
                         echo '</tr>';
                     }
                 }
@@ -28,7 +38,7 @@
                 </table>
             </div>        
         
-        
+    
         
         
             
