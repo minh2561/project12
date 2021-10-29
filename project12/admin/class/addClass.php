@@ -1,4 +1,38 @@
 <?php include('../../index/header.php') ?>
+<?php 
+   
+    if(isset($_POST['submit']))
+    {   
+        $mh_id=$_GET['mh_id'];
+        $lop_ten_hoc_phan = $_POST['lop_ten_hoc_phan'];
+        $lop_trang_thai = $_POST['lop_trang_thai'];
+        $lop_max_sv = $_POST['lop_max_sv'];
+        $lop_current_sv = $_POST['lop_current_sv'];
+        $lop_ten_phong = $_POST['lop_ten_phong'];
+        $lop_tuan_hoc = $_POST['lop_tuan_hoc'];
+        $lop_gio_hoc = $_POST['lop_gio_hoc'];
+        $lop_trang_thai_dang_ki = $_POST['lop_trang_thai_dang_ki'];
+        $gv_id = $_POST['gv_id'];
+        $sql = "INSERT INTO dang_ki_tin_chi (`lop_id`, `lop_ten_hoc_phan`, `lop_trang_thai`, `lop_max_sv`, `lop_current_sv`, `lop_ten_phong`, `lop_tuan_hoc`, `lop_gio_hoc`, `lop_trang_thai_dang_ki`, `mh_id`, `gv_id`)
+         VALUES ('','$lop_ten_hoc_phan','$lop_trang_thai','$lop_max_sv','$lop_current_sv','$lop_ten_phong','$lop_tuan_hoc','$lop_gio_hoc','$lop_trang_thai_dang_ki','$mh_id','$gv_id')
+        ";
+        $res = mysqli_query($conn, $sql) or die(mysqli_error());
+
+        if($res==TRUE)
+        {
+            $_SESSION['add'] = "<div class='success'> Added Class Successfully.</div>";
+            header('location:'.SITEURL.'admin/index.php');
+        }
+        else
+        {
+            $_SESSION['add'] = "<div class='error'>Failed to Add Class.</div>";
+            header('location:'.SITEURL.'admin/index.php');
+        }
+
+    }
+    
+?>
+
 
 <form action="" method="POST">
     <div class="form-group">
@@ -84,38 +118,5 @@
 </form>
 
 
-<?php 
-   
-    if(isset($_POST['submit']))
-    {   
-        $mh_id=$_GET['mh_id'];
-        $lop_ten_hoc_phan = $_POST['lop_ten_hoc_phan'];
-        $lop_trang_thai = $_POST['lop_trang_thai'];
-        $lop_max_sv = $_POST['lop_max_sv'];
-        $lop_current_sv = $_POST['lop_current_sv'];
-        $lop_ten_phong = $_POST['lop_ten_phong'];
-        $lop_tuan_hoc = $_POST['lop_tuan_hoc'];
-        $lop_gio_hoc = $_POST['lop_gio_hoc'];
-        $lop_trang_thai_dang_ki = $_POST['lop_trang_thai_dang_ki'];
-        $gv_id = $_POST['gv_id'];
-        $sql = "INSERT INTO dang_ki_tin_chi (`lop_id`, `lop_ten_hoc_phan`, `lop_trang_thai`, `lop_max_sv`, `lop_current_sv`, `lop_ten_phong`, `lop_tuan_hoc`, `lop_gio_hoc`, `lop_trang_thai_dang_ki`, `mh_id`, `gv_id`)
-         VALUES ('','$lop_ten_hoc_phan','$lop_trang_thai','$lop_max_sv','$lop_current_sv','$lop_ten_phong','$lop_tuan_hoc','$lop_gio_hoc','$lop_trang_thai_dang_ki','$mh_id','$gv_id')
-        ";
-        $res = mysqli_query($conn, $sql) or die(mysqli_error());
-
-        if($res==TRUE)
-        {
-            $_SESSION['add'] = "<div class='success'> Added Class Successfully.</div>";
-            header('location:'.SITEURL.'admin/index.php');
-        }
-        else
-        {
-            $_SESSION['add'] = "<div class='error'>Failed to Add Class.</div>";
-            header('location:'.SITEURL.'admin/index.php');
-        }
-
-    }
-    
-?>
 
 <?php include('../index/footer.php')?>
