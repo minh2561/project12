@@ -2,6 +2,14 @@
  include('../index/header.php');
 include('menu.php');
 include('check_login_sv.php');
+
+$checkTrangThai = '';
+$sql7 = "SELECT * FROM admin";
+$result7 = mysqli_query($conn, $sql7); 
+if(mysqli_num_rows($result7)>0) {
+    $row = mysqli_fetch_assoc($result7);
+    $checkTrangThai = $row['trang_thai'];
+}
 ?>
 <div class="main-content">
 <div class="wrapper">
@@ -18,9 +26,10 @@ include('check_login_sv.php');
         }
     ?>
     <h1>Đăng kí học</h1>
+    <?php if($checkTrangThai == 'Đóng'){echo '<h3>Trạng thái đăng kí học đã hết hạn</h3>';} ?>
     <div>
-        <input type="text" placeholder="Nhập tên môn học" onchange="handleGetName(this.value)">
-        <button class="btn btn-primary" id="btnSearch"><a id="hrefSearch">Tìm kiếm</a></button>
+        <input  <?php if($checkTrangThai == 'Đóng'){echo 'disabled';} ?> type="text" placeholder="Nhập tên môn học" onchange="handleGetName(this.value)">
+        <button  <?php if($checkTrangThai == 'Đóng'){echo 'disabled';} ?> class="btn btn-primary" id="btnSearch"><a id="hrefSearch">Tìm kiếm</a></button>
     </div>
     <table class="table">
         <thead>
