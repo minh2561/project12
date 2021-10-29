@@ -2,7 +2,7 @@
 
 
 <?php 
-   
+   $lop_id = $_GET['lop_id'];
     if(isset($_POST['submit']))
     {   
         $mh_id=$_GET['mh_id'];
@@ -37,7 +37,6 @@
 
 
 <?php
-$lop_id = $_GET['lop_id'];
  $sql = "SELECT * FROM dang_ki_tin_chi WHERE lop_id = '$lop_id'";
  $res = mysqli_query($conn,$sql);
  $count = mysqli_num_rows($res);
