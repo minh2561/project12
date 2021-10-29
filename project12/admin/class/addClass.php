@@ -119,4 +119,4 @@
 
 
 
-<?php include('../index/footer.php')?>
+<?php include('../../index/footer.php')?>
