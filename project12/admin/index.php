@@ -1,6 +1,7 @@
 <?php
-    include './check_login_admin.php';
+   
     include '../index/header.php';
+ include './check_login_admin.php';
     $trang_thai = '';
     $sql = "SELECT * FROM admin";
     $result = mysqli_query($conn, $sql); 
