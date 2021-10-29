@@ -8,7 +8,12 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th scope="col">Môn học</th>
+                            <th scope="col">                           
+                                <div class="container_swap">
+                                    <div class="div_left">Môn học </div>
+                                    <div class="div_right"><a href="./subject/add_subject.php"><i class="bi bi-clipboard-plus"></i></a></div>
+                                </div>
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -19,8 +24,9 @@
                     while($row = mysqli_fetch_assoc($result)) {
                         ?>
                         <tr>
-                           <th scope="row"><button onclick="handleDetails('<?php echo $row['mh_id'] ?>')"><?php echo $row['mh_ten_mon'] ?></button>
-                       </tr>
+                           <th scope="row"><button type="button" class="btn btn-outline-secondary" onclick="handleDetails('<?php echo $row['mh_id'] ?>')"><?php echo $row['mh_ten_mon'] ?></button>
+                           <div class="div_right"><a href="#"><i class="fas fa-pencil-alt"></i></a></div>
+                        </tr>
                     <?php }
                 }
             ?>  
@@ -33,16 +39,17 @@
                 <div class="cot2_1">Lớp học phần<hr></div>    
                 <table id="tableSubject" >
                 <tr>
-                    <th>stt</th>
-                    <th>lop_hoc_phan</th>
-                    <th>lop_ten_hoc_phan</th>
-                    <th>lop_trang_thai</th>
-                    <th>lop_max_sv</th>
-                    <th>lop_current_sv</th>
-                    <th>lop_ten_phong</th>
-                    <th>lop_tuan_hoc</th>
-                    <th>lop_gio_hoc</th>
-                    <th>lop_trang_thai_dang_ki</th>
+                    <th>STT </th>
+                    <th>Lớp học phần </th>
+                    <th>Lớp tên học phần</th>
+                    <th>Lớp trạng thái</th>
+                    <th>Lớp(max)</th>
+                    <th>Lớp(đã đăng ký)</th>
+                    <th>Tên phòng học</th>
+                    <th>Tuần học</th>
+                    <th>Thời gian học</th>
+                    <th>Trạng thái đăng ký</th>
+                    <th>Xóa</th>
                 </tr>
                 </table>            
             </div>
