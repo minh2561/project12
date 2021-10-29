@@ -65,16 +65,23 @@ a{
 .img_back{
     background-image: url(../images/back_admin.jpg);
     width: auto;
+    height: 100%;
+    box-sizing: border-box;
+    position: relative;
+    overflow-x: auto;
 }
+/* .cot0{
+    height: 93%;
+} */
 .cot{
-    height: 83.7vh;
+    height: 90%;
     text-align: center;
     font-size: 20px;
-    border-left: thick solid;
+    /* border-left: thick solid; */
 }
 .cot1{
     background-color: white;
-    padding-top: 10px;
+    padding-top: 9px;
 }
 .cot2_1{
     padding-top: 10px;
@@ -98,6 +105,10 @@ a{
     float: left;
     background: url('../images/footer.jpg') no-repeat top;
     height: 100px;
+    bottom: 0px;
+    /* position: absolute; */
+    /* height: 100px;
+    width: 100%; */
 }
 .subject{
     width: 100px;
@@ -124,7 +135,38 @@ a{
     float: right;   
     text-align: center;
 }    
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+table#tableSubject, th, td{
+    border:1px solid #ccc;
+}
+table#tableSubject{
+    border-collapse:collapse;
+    width:100%;
+}
+th#tableSubject, td#tableSubject{
+    text-align:left;
+    padding:10px;
+}
+tr#tableSubject :hover{
+    background-color:#ddd;
+    cursor:pointer;
+}
+
+
+
 
 
 
