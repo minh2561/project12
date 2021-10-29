@@ -20,7 +20,7 @@ if (mysqli_num_rows($result7) > 0) {
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
                 <li class="nav-item ">
-                    <a class="nav-link" href="#"><i class="fas fa-home me-1"></i>Trang chủ</a>
+                    <a class="nav-link" href="index.php"><i class="fas fa-home me-1"></i>Trang chủ</a>
                 </li>
                 <li class="nav-item ">
                     <a class="nav-link" href="#"><i class="fas fa-pencil-alt me-1"></i>Đăng kí học</a>
@@ -29,7 +29,7 @@ if (mysqli_num_rows($result7) > 0) {
                     <a class="nav-link" href="#"><i class="far fa-calendar-alt me-1"></i>Các môn đăng kí học</a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="#"><i class="fas fa-sign-out-alt me-1"></i>Đăng xuất</a>
+                    <a class="nav-link" href="../index/logout.php"><i class="fas fa-sign-out-alt me-1"></i>Đăng xuất</a>
                 </li>
             </ul>
 
@@ -97,7 +97,7 @@ if (mysqli_num_rows($result7) > 0) {
                     echo '<td>' . $row['lop_gio_hoc'] . '</td>';
                     echo '<td>' . $row['lop_trang_thai_dang_ki'] . '</td>';
                     echo '<td><i class="fas fa-check-circle text-success"></i></td>';
-                    echo '<td><a href="cancelSubject.php?lop_id=' . $row['lop_id'] . '&sv_id=' . $id . '">Hủy đăng kí</a></td>';
+                    echo '<td><a href="cancelSubject.php?lop_id=' . $row['lop_id'] . '&sv_id=' . $id . '" class ="text-danger">Hủy</a></td>';
 
                     echo '</tr>';
                     echo '</tbody>';
