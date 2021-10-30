@@ -1,15 +1,5 @@
 <?php
 include('../index/header.php');
-
-include('check_login_sv.php');
-$checkTrangThai = '';
-$sql7 = "SELECT * FROM admin";
-$result7 = mysqli_query($conn, $sql7);
-if (mysqli_num_rows($result7) > 0) {
-    $row = mysqli_fetch_assoc($result7);
-    $checkTrangThai = $row['trang_thai'];
-}
-
 ?>
 <nav class="navbar navbar-expand-lg navbar-light bg-danger">
     <div class="container-fluid">
@@ -19,14 +9,14 @@ if (mysqli_num_rows($result7) > 0) {
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
-                <li class="nav-item ">
+            <li class="nav-item ">
                     <a class="nav-link" href="index.php"><i class="fas fa-home me-1"></i>Trang chủ</a>
                 </li>
                 <li class="nav-item ">
                     <a class="nav-link" href="#"><i class="fas fa-pencil-alt me-1"></i>Đăng kí học</a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="#"><i class="far fa-calendar-alt me-1"></i>Các môn đăng kí học</a>
+                    <a class="nav-link" href="dangki.php"><i class="far fa-calendar-alt me-1"></i>Các môn đăng kí học</a>
                 </li>
                 <li class="nav-item ">
                     <a class="nav-link" href="../index/logout.php"><i class="fas fa-sign-out-alt me-1"></i>Đăng xuất</a>
@@ -48,18 +38,9 @@ if (mysqli_num_rows($result7) > 0) {
             unset($_SESSION['add']); //REmoving Session Message
         }
         ?>
-        <h3 class="text-center py-4">Đăng kí học</h3>
-        <?php if ($checkTrangThai == 'Đóng') {
-            echo '<h6>Trạng thái đăng kí học đã hết hạn</h6>';
-        } ?>
-        <form class="d-flex px-5 mb-4">
-            <input <?php if ($checkTrangThai == 'Đóng') {
-                        echo 'disabled';
-                    }; ?> class="form-control me-2 " type="search" placeholder="Nhập môn học muốn đăng kí" onchange="handleGetName(this.value)">
-            <button <?php if ($checkTrangThai == 'Đóng') {
-                        echo 'disabled';
-                    } ?> class="btn btn-primary" id="btnSearch"><a id="hrefSearch">Tìm kiếm</a></button>
-        </form>
+        <h3 class="text-center py-4">Các môn đã đăng kí</h3>
+     
+       
 
         <table class="table">
             <thead class="bg-primary">
@@ -103,7 +84,7 @@ if (mysqli_num_rows($result7) > 0) {
                     echo '</tbody>';
                 }
             } else {
-                echo "<h1>Ban chua dang ki mon hoc nao ca</h1>";
+                echo "<h6>Bạn chưa đăng kí môn học nào cả</h6>";
             }
             ?>
 
