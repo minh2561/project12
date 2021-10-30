@@ -19,14 +19,12 @@ if (mysqli_num_rows($result7) > 0) {
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+               
                 <li class="nav-item ">
-                    <a class="nav-link" href="index.php"><i class="fas fa-home me-1"></i>Trang chủ</a>
+                    <a class="nav-link" href="index.php"><i class="fas fa-pencil-alt me-1"></i>Đăng kí học</a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="#"><i class="fas fa-pencil-alt me-1"></i>Đăng kí học</a>
-                </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="#"><i class="far fa-calendar-alt me-1"></i>Các môn đăng kí học</a>
+                    <a class="nav-link" href="dangki.php"><i class="far fa-calendar-alt me-1"></i>Các môn đăng kí học</a>
                 </li>
                 <li class="nav-item ">
                     <a class="nav-link" href="../index/logout.php"><i class="fas fa-sign-out-alt me-1"></i>Đăng xuất</a>
