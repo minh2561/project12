@@ -58,7 +58,7 @@ if (mysqli_num_rows($result7) > 0) {
                     }; ?> class="form-control me-2 " type="search" placeholder="Nhập môn học muốn đăng kí" onchange="handleGetName(this.value)">
             <button <?php if ($checkTrangThai == 'Đóng') {
                         echo 'disabled';
-                    } ?> class="btn btn-primary"><a id="hrefSearch">Tìm kiếm</a></button>
+                    } ?> class="btn btn-primary" id="btnSearch"><a id="hrefSearch">Tìm kiếm</a></button>
         </form>
 
         <table class="table">
