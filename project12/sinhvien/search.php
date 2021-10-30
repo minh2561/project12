@@ -34,9 +34,7 @@
 
                         ?> 
         <tr>
-            <td>
-                <?php echo $lop_hoc_phan; ?>.
-            </td>
+       
             <td>
                 <?php echo $lop_ten_hoc_phan; ?>
             </td>
