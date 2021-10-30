@@ -22,7 +22,7 @@
             if($count >0){
                 while($rows=mysqli_fetch_assoc($res)){
                         $lop_id = $rows['lop_id'];
-                        $lop_hoc_phan=$rows['lop_hoc_phan'];
+                      
                         $lop_ten_hoc_phan=$rows['lop_ten_hoc_phan'];
                         $lop_trang_thai=$rows['lop_trang_thai'];
                         $lop_max_sv	=$rows['lop_max_sv'];
