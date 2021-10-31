@@ -3,7 +3,7 @@ include('../index/header.php');
 
 include('check_login_sv.php');
 $checkTrangThai = '';
-$sql7 = "SELECT * FROM admin";
+$sql7 = "SELECT DISTINCT  * FROM admin";
 $result7 = mysqli_query($conn, $sql7);
 if (mysqli_num_rows($result7) > 0) {
     $row = mysqli_fetch_assoc($result7);
@@ -79,7 +79,7 @@ if (mysqli_num_rows($result7) > 0) {
             </thead>
             <?php
             $id = $_SESSION['sinh_vien'];
-            $sql = "SELECT * FROM `dang_ki_tin_chi` JOIN relation_sv_mh , sinh_vien WHERE sinh_vien.sv_id = relation_sv_mh.sv_id AND relation_sv_mh.lop_id = dang_ki_tin_chi.lop_id AND sinh_vien.sv_id = '$id'";
+            $sql = "SELECT DISTINCT  * FROM `dang_ki_tin_chi` JOIN relation_sv_mh , sinh_vien WHERE sinh_vien.sv_id = relation_sv_mh.sv_id AND relation_sv_mh.lop_id = dang_ki_tin_chi.lop_id AND sinh_vien.sv_id = '$id'";
             $res = mysqli_query($conn, $sql);
             $count =  mysqli_num_rows($res);
             if ($count > 0) {
