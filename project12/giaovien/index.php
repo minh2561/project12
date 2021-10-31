@@ -56,7 +56,7 @@ include 'check_login_gv.php';
                 echo '<td>'.$row['lop_ten_phong'].'</td>';
                 echo '<td>'.$row['lop_tuan_hoc'].'</td>'; 
                 echo '<td>'.$row['lop_gio_hoc'].'</td>';
-                echo '<td><a href ="edit.php?id='.$row['lop_id'].'" class = "text-primary"><i class="fas fa-list"></i></a></td>'; 
+                echo '<td><a href ="getSv.php?lop_id='.$row['lop_id'].'" class = "text-primary"><i class="fas fa-list"></i></a></td>'; 
                 
                 echo '</tr>';
                 echo '</tbody>';
