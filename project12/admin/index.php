@@ -140,7 +140,7 @@
         <td>${data.lop_tuan_hoc} </td>
         <td>${data.lop_gio_hoc	} </td>
         <td>${data.lop_trang_thai_dang_ki} </td>
-        <td >${data.gv_id}</td>        
+        <td >${data.gv_ten}</td>        
         <td><a href="class/updateClass.php?lop_id=${data.lop_id}&mh_id=${mh_id}">Sua </a></td>
         <td><a href="class/deleteClass.php?lop_id=${data.lop_id}">Xoa</a></td>
     </tr>
