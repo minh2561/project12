@@ -15,7 +15,7 @@
     <?php 
     $sv_id = $_SESSION['sinh_vien'];
      $search = $_GET['q'];
-     $sql = "SELECT * FROM dang_ki_tin_chi WHERE lop_ten_hoc_phan LIKE '%$search%' ";
+     $sql = "SELECT DISTINCT  * FROM dang_ki_tin_chi WHERE lop_ten_hoc_phan LIKE '%$search%' ";
      $res = mysqli_query($conn,$sql);
      if($res == TRUE){
             $count = mysqli_num_rows($res);
