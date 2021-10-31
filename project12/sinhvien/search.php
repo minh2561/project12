@@ -72,5 +72,6 @@
      }
      ?>
     </table>
+        <a href="index.php" >Quay lai </a>
     </div>
 <?php include('../index/footer.php') ?>
