@@ -18,6 +18,10 @@
   <button type="submit" name="submit" class="btn btn-primary">ADD</button>
 </form>
 
+    <div>
+        <a href="<?php echo SITEURL ?>admin"> Quay lai</a>
+</div>
+
 <?php 
     if(isset($_POST['submit'])){
         $mh_id = $_POST['mh_id'];
