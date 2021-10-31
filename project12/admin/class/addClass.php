@@ -115,6 +115,10 @@
     <div class="custom-control custom-radio">
         <input type="submit" name="submit" value="Add Class" class="btn-secondary">
     </div>
+   
+    <div>
+        <a href="<?php echo SITEURL ?>admin"> Quay lai</a>
+</div>
 </form>
 
 
