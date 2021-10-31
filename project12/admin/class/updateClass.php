@@ -139,5 +139,9 @@
     </div>
 </form>
 
+    <div>
+        <a href="<?php echo SITEURL ?>admin"> Quay lai</a>
+</div>
+
 
 <?php include('../../index/footer.php')?>
