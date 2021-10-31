@@ -27,6 +27,10 @@ $mh_id = $_GET['mh_id'];
     <div class="custom-control custom-radio">
         <input type="submit" name="submit" value="update Class" class="btn-secondary">
     </div>
+ 
+    <div>
+        <a href="<?php echo SITEURL ?>admin"> Quay lai</a>
+</div>
 
 <?php 
    
