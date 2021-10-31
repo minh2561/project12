@@ -37,7 +37,7 @@
             <!-- toggle switch  -->
 <div>
     <span>học kì : <?php echo $trang_thai ?></span>
-    <button class="btn" ><a href="trangThai.php?trang_thai=<?php echo $trang_thai ?>">Đóng/Mở</a></button>
+    <button class="btn" ><a href="trangThai.php?trang_thai=<?php echo $trang_thai ?>">Thay đổi</a></button>
             </div>
             <!-- toggle switch  -->
         <div class="tieu_de">Thông tin môn học</div>
