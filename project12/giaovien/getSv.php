@@ -7,12 +7,32 @@
 include '../index/header.php';
 include 'check_login_gv.php';
 ?>
-<div class="main-content">
-<div class="wrapper">
-    <h1>Môn học</h1>
+<nav class="navbar navbar-expand-lg navbar-light bg-danger">
+    <div class="container-fluid">
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+                <li class="nav-item ">
+                    <a class="nav-link" href="index.php"><i class="far fa-calendar-alt me-1"></i>Môn học</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="../index/logout.php"><i class="fas fa-sign-out-alt me-1"></i>Đăng xuất</a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+<div class="main-content bg-light" style="min-height: 500px;">
+    <div class="container">
+   
+     <h3 class="text-center py-4">Danh sách sinh viên</h3>
     
     <table class="table">
-        <thead>
+        <thead class="bg-primary"> 
         <tr>
             <th scope="col">STT</th>
             <th scope="col">Email</th>
@@ -44,7 +64,7 @@ include 'check_login_gv.php';
 
         
     </table>
-    <a href="index.php">Quay lai</a>
+    <a href="index.php" class="">Quay lai</a>
 
 </div>
 </div>
