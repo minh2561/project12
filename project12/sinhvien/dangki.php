@@ -9,11 +9,9 @@ include('../index/header.php');
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
-            <li class="nav-item ">
-                    <a class="nav-link" href="index.php"><i class="fas fa-home me-1"></i>Trang chủ</a>
-                </li>
+         
                 <li class="nav-item ">
-                    <a class="nav-link" href="#"><i class="fas fa-pencil-alt me-1"></i>Đăng kí học</a>
+                    <a class="nav-link" href="index.php"><i class="fas fa-pencil-alt me-1"></i>Đăng kí học</a>
                 </li>
                 <li class="nav-item ">
                     <a class="nav-link" href="dangki.php"><i class="far fa-calendar-alt me-1"></i>Các môn đăng kí học</a>
@@ -26,7 +24,7 @@ include('../index/header.php');
         </div>
     </div>
 </nav>
-<div class="main-content bg-light" style="height: 500px;">
+<div class="main-content bg-light" style="min-height: 500px;">
     <div class="container">
         <?php
         if (isset($_SESSION['delete'])) {
@@ -60,7 +58,7 @@ include('../index/header.php');
             </thead>
             <?php
             $id = $_SESSION['sinh_vien'];
-            $sql = "SELECT * FROM `dang_ki_tin_chi` JOIN relation_sv_mh , sinh_vien WHERE sinh_vien.sv_id = relation_sv_mh.sv_id AND relation_sv_mh.lop_id = dang_ki_tin_chi.lop_id AND sinh_vien.sv_id = '$id'";
+            $sql = "SELECT DISTINCT * FROM `dang_ki_tin_chi` JOIN relation_sv_mh , sinh_vien WHERE sinh_vien.sv_id = relation_sv_mh.sv_id AND relation_sv_mh.lop_id = dang_ki_tin_chi.lop_id AND sinh_vien.sv_id = '$id'";
             $res = mysqli_query($conn, $sql);
             $count =  mysqli_num_rows($res);
             if ($count > 0) {
