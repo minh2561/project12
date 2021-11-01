@@ -64,11 +64,11 @@ include 'check_login_gv.php';
 
         
     </table>
-    <a href="index.php" class="">Quay lai</a>
+    <button class="bg-primary"><a href="index.php" class="">Quay lai</a></button>
 
 </div>
 </div>
-
+<div class="end"></div>
 <?php
 include '../index/footer.php'
 ?>
