@@ -1,5 +1,5 @@
 <?php
-include('./header.php');
+include('../index/header.php');
 include('check_login_sv.php');
 $sv_id=$_SESSION['sinh_vien'];
 $checkTrangThai = '';
