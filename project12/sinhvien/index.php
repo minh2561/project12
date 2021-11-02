@@ -1,9 +1,9 @@
 <?php
-include('../index/header.php');
-
+include('./header.php');
 include('check_login_sv.php');
+$sv_id=$_SESSION['sinh_vien'];
 $checkTrangThai = '';
-$sql7 = "SELECT DISTINCT  * FROM admin";
+$sql7 = "SELECT DISTINCT * FROM admin";
 $result7 = mysqli_query($conn, $sql7);
 if (mysqli_num_rows($result7) > 0) {
     $row = mysqli_fetch_assoc($result7);
@@ -11,32 +11,49 @@ if (mysqli_num_rows($result7) > 0) {
 }
 
 ?>
-<nav class="navbar navbar-expand-lg navbar-light bg-danger">
-    <div class="container-fluid">
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
-                <li class="nav-item ">
-                    <a class="nav-link" href="index.php"><i class="fas fa-home me-1"></i>Trang chủ</a>
-                </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="#"><i class="fas fa-pencil-alt me-1"></i>Đăng kí học</a>
-                </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="dangki.php"><i class="far fa-calendar-alt me-1"></i>Các môn đăng kí học</a>
-                </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="../index/logout.php"><i class="fas fa-sign-out-alt me-1"></i>Đăng xuất</a>
-                </li>
-            </ul>
-
+<div class="tuychon">
+<nav class="mb-4 px-5 navbar navbar-expand-lg navbar-light pink lighten-4">
+        <div class="logo">
+                <a href="#" title="Logo">
+                    <img src="../images/log.png" alt="Restaurant Logo" class="img-responsive">
+                </a>
         </div>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto" style="margin:0 auto">
+            <li class="nav-item ms-5">
+                <a class="nav-link font-bold" href="index.php"><i class="fas fa-home me-1"></i>Trang chủ</a>
+            </li>
+            <li class="nav-item ms-5">
+                <a class="nav-link font-bold" href="dangki.php"><i class="far fa-calendar-alt me-1"></i>Các môn đăng kí học</a>
+            </li>
+            <li class="nav-item ms-5">
+                <a class="nav-link font-bold" href="../index/logout.php"><i class="fas fa-sign-out-alt" style="margin-right:10px"></i>Đăng xuất</a>
+            </li>
+        </ul>
+        <form class="form-inline md-form mb-0" >
+        <!-- <i class="fas fa-search"></i> -->
+            <input <?php if ($checkTrangThai == 'Đóng') {
+                        echo 'disabled';
+                    }; ?> class="form-control font-bold " type="text" placeholder="Search" aria-label="Search" onchange="handleGetName(this.value)" aria-label="Search">
+                <button <?php if ($checkTrangThai == 'Đóng') {
+                            echo 'disabled';
+                        } ?> class="btn btn-primary" id="btnSearch"><a id="hrefSearch">Tìm Kiếm </a></button>
+                
+    </form>
     </div>
 </nav>
-<div class="main-content bg-light" style="height: 500px;">
+</div> 
+   
+
+
+
+
+
+
+<div class="main-content bg-light table_sv">
     <div class="container">
         <?php
         if (isset($_SESSION['delete'])) {
@@ -48,73 +65,63 @@ if (mysqli_num_rows($result7) > 0) {
             unset($_SESSION['add']); //REmoving Session Message
         }
         ?>
-        <h3 class="text-center py-4">Đăng kí học</h3>
+
         <?php if ($checkTrangThai == 'Đóng') {
             echo '<h6>Trạng thái đăng kí học đã hết hạn</h6>';
         } ?>
-        <form class="d-flex px-5 mb-4">
-            <input <?php if ($checkTrangThai == 'Đóng') {
-                        echo 'disabled';
-                    }; ?> class="form-control me-2 " type="search" placeholder="Nhập môn học muốn đăng kí" onchange="handleGetName(this.value)">
-            <button <?php if ($checkTrangThai == 'Đóng') {
-                        echo 'disabled';
-                    } ?> class="btn btn-primary" id="btnSearch"><a id="hrefSearch">Tìm kiếm</a></button>
-        </form>
-
-        <table class="table">
-            <thead class="bg-primary">
-                <tr>
-                    <th scope="col">STT</th>
-                    <th scope="col">Tên học phần</th>
-                    <th scope="col">Trạng thái</th>
-                    <th scope="col">Tổng sinh viên</th>
-                    <th scope="col">Số sinh viên</th>
-                    <th scope="col">Tên phòng</th>
-                    <th scope="col">Tuần học</th>
-                    <th scope="col">Gio học</th>
-                    <th scope="col">Trạng thái đăng kí</th>
-                    <th scope="col">Đăng kí</th>
-                    <th scope="col">Hủy đăng kí</th>
-                </tr>
-            </thead>
-            <?php
-            $id = $_SESSION['sinh_vien'];
-            $sql = "SELECT DISTINCT  * FROM `dang_ki_tin_chi` JOIN relation_sv_mh , sinh_vien WHERE sinh_vien.sv_id = relation_sv_mh.sv_id AND relation_sv_mh.lop_id = dang_ki_tin_chi.lop_id AND sinh_vien.sv_id = '$id'";
-            $res = mysqli_query($conn, $sql);
-            $count =  mysqli_num_rows($res);
-            if ($count > 0) {
-                $i = 1;
-                while ($row = mysqli_fetch_assoc($res)) {
-                    echo '<tbody>';
-                    echo '<tr>';
-                    echo '<td>' . $i++ . '</td>';
-                    echo '<td>' . $row['lop_ten_hoc_phan'] . '</td>';
-                    echo '<td>' . $row['lop_trang_thai'] . '</td>';
-                    echo '<td>' . $row['lop_max_sv'] . '</td>';
-                    echo '<td>' . $row['lop_current_sv'] . '</td>';
-                    echo '<td>' . $row['lop_ten_phong'] . '</td>';
-                    echo '<td>' . $row['lop_tuan_hoc'] . '</td>';
-                    echo '<td>' . $row['lop_gio_hoc'] . '</td>';
-                    echo '<td>' . $row['lop_trang_thai_dang_ki'] . '</td>';
-                    echo '<td><i class="fas fa-check-circle text-success"></i></td>';
-                    echo '<td><a href="cancelSubject.php?lop_id=' . $row['lop_id'] . '&sv_id=' . $id . '" class ="text-danger">Hủy</a></td>';
-
-                    echo '</tr>';
-                    echo '</tbody>';
-                }
-            } else {
-                echo "<h1>Ban chua dang ki mon hoc nao ca</h1>";
-            }
-            ?>
-
-
-
-        </table>
-
     </div>
+    <div class="d-flex main-content back_sv">
+        <div class="col-sm-2 bg-primary_sv ">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col" class="text-center">Môn học</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    $sql = "SELECT * FROM mon_hoc";
+                    $res = mysqli_query($conn, $sql);
+                    if (mysqli_num_rows($res) > 0) {
+                        while ($row = mysqli_fetch_assoc($res)) {
+                            ?>
+                            <tr>
+                            <th scope="row"><button type="button" class="btn btn-danger" onclick="handleDetails('<?php echo $row['mh_id'] ?>')"><?php echo $row['mh_ten_mon'] ?></button>
+                            </tr>  
+                       <?php }
+                    }
+                    ?>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-sm-10 ">
+            <h5 class="text-center my-3">Lớp học phần</h5>
+            <div class="container">
+                <table class="table table-hover" id="tableSubject">
+                    <thead class="bg-primary_sv ">
+                        <tr>
+                            <th scope="col">STT</th>
+                            <th scope="col">Tên học phần</th>
+                            <th scope="col">Trạng thái</th>
+                            <th scope="col">Tổng sinh viên</th>
+                            <th scope="col">Số sinh viên</th>
+                            <th scope="col">Tên phòng</th>
+                            <th scope="col">Tuần học</th>
+                            <th scope="col">Giờ học</th>
+                            <th scope="col">Đăng kí</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
 </div>
+<div class="end_sv"></div>
 <?php
-include('../index/footer.php');
+    include('../index/footer.php');
 ?>
 <script>
     var search;
@@ -128,9 +135,39 @@ include('../index/footer.php');
             $("#hrefSearch").attr("href", `search.php?q=${search}`)
         })
     })
-</script>
-</table>
-</div>
 
-</div>
-<div class="end"></div>
+    var data ;
+    async function handleDetails(mh_id){
+         $("#tableSubject > tbody >tr").remove();   
+         $("#addClass > a:first-child").remove();
+         // call api lay du lieu class 
+        await $.ajax({
+            url:`getClass.php?mh_id=${mh_id}`,
+            type:"get",
+            success:function(response){
+                data = JSON.parse(response); 
+            }
+        })
+
+         // nut them lop moi 
+
+
+        // neu co du lieu tu lop hien thi len table
+        if(data.users.length !== 0){
+        $.each(data.users,function(i,data){
+        $("#tableSubject > tbody").append(`
+    <tr>
+        <td>${++i}</td>
+        <td>${data.lop_ten_hoc_phan	} </td>
+        <td>${data.lop_trang_thai	} </td>
+        <td>${data.lop_max_sv} </td>
+        <td>${data.lop_current_sv} </td>
+        <td>${data.lop_ten_phong} </td>
+        <td>${data.lop_tuan_hoc} </td>
+        <td>${data.lop_gio_hoc	} </td>
+        <td ><a style="color:red" href="addSubject.php?lop_id=${data.lop_id}&sv_id=<?php echo $sv_id ?>">Đăng kí</a></td>
+    </tr>
+    `)  
+    })        
+    }};
+</script>
