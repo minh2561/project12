@@ -15,7 +15,7 @@ if (mysqli_num_rows($result7) > 0) {
 <div class="tuychon">
 <nav class="mb-4 px-5 navbar navbar-expand-lg navbar-light pink lighten-4">
         <div class="logo">
-                <a href="#" title="Logo">
+                <a href="index.php" title="Logo">
                     <img src="../images/log.png" alt="Restaurant Logo" class="img-responsive">
                 </a>
         </div>
