@@ -14,7 +14,7 @@ $sql2 = "UPDATE dang_ki_tin_chi SET lop_current_sv=lop_current_sv +1 WHERE lop_i
     $res2= mysqli_query($conn,$sql2);
     if($res==true && $trang_thai == "Mở")
     {   
-        $_SESSION['add'] = "<div class='success'>ADD  Successfully.</div>";
+        $_SESSION['add'] = "<div class='success'>ADD Successfully.</div>";
         header('location:'.SITEURL.'sinhvien/index.php');
     }
     else

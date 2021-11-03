@@ -50,7 +50,7 @@
         </li>
       </ul>
       <form class="d-flex navbar-nav mb-7 mb-lg-0">
-        <button class="btn btn-danger" type="button"><a href="../index/logout.php" >Đăng xuất</a></button>
+        <button class="btn btn-danger" type="button"><a href="../index/logout.php">Đăng xuất</a></button>
       </form>
     </div>
   </div>
@@ -103,10 +103,10 @@
                     <th>Tên học phần</th>
                     <th>Trạng thái</th>
                     <th>Max-SV</th>
-                    <th>Curent-SV</th>
+                    <th>Số lượng ĐK</th>
                     <th>Tên phòng</th>
                     <th>Tuần học</th>
-                    <th>Giờ học</th>
+                    <th>Thời gian bắt đầu(h)</th>
                     <th>Trạng thái đăng ký</th>
                     <th>Giáo viên</th>
                 </tr>

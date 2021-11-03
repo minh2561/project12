@@ -73,7 +73,7 @@ if (mysqli_num_rows($result7) > 0) {
                             <th scope="col">Tên học phần</th>
                             <th scope="col">Trạng thái</th>
                             <th scope="col">Tổng sinh viên</th>
-                            <th scope="col">Số sinh viên</th>
+                            <th scope="col">Số sinh viên đã ĐK</th>
                             <th scope="col">Tên phòng</th>
                             <th scope="col">Tuần học</th>
                             <th scope="col">Gio học</th>

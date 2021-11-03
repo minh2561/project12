@@ -9,7 +9,7 @@
         $lop_ten_hoc_phan = $_POST['lop_ten_hoc_phan'];
         $lop_trang_thai = $_POST['lop_trang_thai'];
         $lop_max_sv = $_POST['lop_max_sv'];
-        $lop_current_sv = $_POST['lop_current_sv'];
+        // $lop_current_sv = $_POST['lop_current_sv'];
         $lop_ten_phong = $_POST['lop_ten_phong'];
         $lop_tuan_hoc = $_POST['lop_tuan_hoc'];
         $lop_gio_hoc = $_POST['lop_gio_hoc'];
@@ -44,22 +44,22 @@
     </div>
     <h5>Lớp trạng thái</h5>
     <div class="custom-control custom-radio">
-        <input type="radio" id="lop_trang_thai" name="lop_trang_thai" value="da hoc" class="custom-control-input"
+        <input type="radio" id="lop_trang_thai" name="lop_trang_thai" value="Đã học" class="custom-control-input"
             required>
         <label class="custom-control-label" for="lop_trang_thai">Đã học</label>
     </div>
     <div class="custom-control custom-radio">
-        <input type="radio" id="lop_trang_thai" name="lop_trang_thai" value="chua hoc" class="custom-control-input">
+        <input type="radio" id="lop_trang_thai" name="lop_trang_thai" value="Chưa học" class="custom-control-input">
         <label class="custom-control-label" for="lop_trang_thai">Chưa học</label>
     </div>
     <div class="form-group">
         <label for="lop_max_sv">Lớp (max SV)</label>
         <input type="text" class="form-control" name="lop_max_sv" id="lop_max_sv" placeholder="VD: 50">
     </div>
-    <div class="form-group">
+    <!-- <div class="form-group">
         <label for="lop_current_sv">Lớp (current SV)</label>
         <input type="text" class="form-control" name="lop_current_sv" id="lop_current_sv" placeholder="VD: 30">
-    </div>
+    </div> -->
     <div class="form-group">
         <label for="lop_ten_phong">Lớp tên phòng</label>
         <input type="text" class="form-control" name="lop_ten_phong" id="lop_ten_phong" placeholder="VD: 1">
@@ -69,16 +69,16 @@
         <input type="date" class="form-control tuan" name="lop_tuan_hoc" id="lop_tuan_hoc" placeholder="Lớp tuần học">
     </div>
     <div class="form-group">
-        <label for="lop_gio_hoc">Lớp giờ học</label>
-        <input type="text" class="form-control" name="lop_gio_hoc" id="lop_gio_hoc" placeholder="Lớp giờ học">
+        <label for="lop_gio_hoc">LThời gian bắt đầu(h)</label>
+        <input type="text" class="form-control" name="lop_gio_hoc" id="lop_gio_hoc" placeholder="VD: 7">
     </div>
     <h5>Lớp trạng thái đăng ký</h5>
     <div class="custom-control custom-radio">
-        <input type="radio" id="open" name="lop_trang_thai_dang_ki" class="custom-control-input" value="open" required>
+        <input type="radio" id="open" name="lop_trang_thai_dang_ki" class="custom-control-input" value="Mở" required>
         <label class="custom-control-label" for="open">Mở</label>
     </div>
     <div class="custom-control custom-radio">
-        <input type="radio" id="close" name="lop_trang_thai_dang_ki" value="close" class="custom-control-input">
+        <input type="radio" id="close" name="lop_trang_thai_dang_ki" value="Đóng" class="custom-control-input">
         <label class="custom-control-label" for="close">Đóng</label>
     </div>
     <h5>Giảng viên</h5>

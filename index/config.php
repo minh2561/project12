@@ -1,6 +1,6 @@
 <?php 
     session_start();
-    define('SITEURL', 'http://localhost/project12/');
+    define('SITEURL', 'http://localhost/website_hust/');
     define('LOCALHOST', 'localhost');
     define('DB_USERNAME', 'root');
     define('DB_PASSWORD', '');

@@ -58,7 +58,7 @@ if (mysqli_num_rows($result7) > 0) {
                     <th>Tên học phần</th>
                     <th>Trạng thái</th>
                     <th>SV tối đa</th>
-                    <th>SV hiện tại</th>
+                    <th>Số sinh viên đã ĐK</th>
                     <th>Tên phòng</th>
                     <th>Tuần học</th>
                     <th>Giờ học</th>

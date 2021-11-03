@@ -45,8 +45,8 @@
 
 <?php 
 if(isset($_POST['submit'])){
-    $email = $_POST['email'];
-    $password = $_POST['password'];
+    $email = mysqli_real_escape_string($conn,$_POST['email']);
+    $password = mysqli_real_escape_string($conn,$_POST['password']);
     $sql = "SELECT * FROM giao_vien WHERE gv_email='$email' AND gv_password='$password'";
     $res = mysqli_query($conn, $sql);
     $count = mysqli_num_rows($res);

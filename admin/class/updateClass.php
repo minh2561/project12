@@ -9,7 +9,7 @@
         $lop_ten_hoc_phan = $_POST['lop_ten_hoc_phan'];
         $lop_trang_thai = $_POST['lop_trang_thai'];
         $lop_max_sv = $_POST['lop_max_sv'];
-        $lop_current_sv = $_POST['lop_current_sv'];
+        // $lop_current_sv = $_POST['lop_current_sv'];
         $lop_ten_phong = $_POST['lop_ten_phong'];
         $lop_tuan_hoc = $_POST['lop_tuan_hoc'];
         $lop_gio_hoc = $_POST['lop_gio_hoc'];
@@ -72,17 +72,17 @@
     </div>
     <div class="custom-control custom-radio">
         <input type="radio" id="lop_trang_thai" name="lop_trang_thai" checked="<?php if($lop_trang_thai == "chua hoc") echo "checked"
-    ?>" class="custom-control-input" value="chua hoc">
+    ?>" class="custom-control-input" value="Chưa học">
         <label class="custom-control-label" for="lop_trang_thai">Chưa học</label>
     </div>
     <div class="form-group">
         <label for="lop_max_sv">Lớp (max SV)</label>
         <input type="text" value="<?php echo $lop_max_sv ?>" class="form-control" name="lop_max_sv" id="lop_max_sv" placeholder="VD: 50">
     </div>
-    <div class="form-group">
+    <!-- <div class="form-group">
         <label for="lop_current_sv">Lớp (current SV)</label>
         <input type="text" value="<?php echo $lop_current_sv ?>" class="form-control" name="lop_current_sv" id="lop_current_sv" placeholder="VD: 30">
-    </div>
+    </div> -->
     <div class="form-group">
         <label for="lop_ten_phong">Lớp tên phòng</label>
         <input type="text" value="<?php echo $lop_ten_phong ?>" class="form-control" name="lop_ten_phong" id="lop_ten_phong" placeholder="VD: 1">
@@ -92,18 +92,18 @@
         <input type="date" value="<?php echo $lop_tuan_hoc ?>" class="form-control tuan" name="lop_tuan_hoc" id="lop_tuan_hoc" placeholder="Lớp tuần học">
     </div>
     <div class="form-group">
-        <label for="lop_gio_hoc">Lớp giờ học</label>
-        <input type="text" value="<?php echo $lop_gio_hoc	 ?>" class="form-control" name="lop_gio_hoc" id="lop_gio_hoc" placeholder="Lớp giờ học">
+        <label for="lop_gio_hoc">Thời gian bắt đầu(h)</label>
+        <input type="text" value="<?php echo $lop_gio_hoc	 ?>" class="form-control" name="lop_gio_hoc" id="lop_gio_hoc" placeholder="Thời gian bắt đầu(h)">
     </div>
     <h5>Lớp trạng thái đăng ký</h5>
     <div class="custom-control custom-radio">
         <input type="radio" checked="<?php if($lop_trang_thai_dang_ki == "open") echo "checked"
-    ?>" id="open" name="lop_trang_thai_dang_ki" class="custom-control-input" value="open" required>
+    ?>" id="open" name="lop_trang_thai_dang_ki" class="custom-control-input" value="Mở" required>
         <label class="custom-control-label" for="open">Mở</label>
     </div>
     <div class="custom-control custom-radio">
         <input checked="<?php if($lop_trang_thai_dang_ki == "close") echo "checked"
-    ?>" type="radio" id="close" name="lop_trang_thai_dang_ki" value="close" class="custom-control-input">
+    ?>" type="radio" id="close" name="lop_trang_thai_dang_ki" value="Đóng" class="custom-control-input">
         <label class="custom-control-label" for="close">Đóng</label>
     </div>
     <h5>Choose Teacher</h5>
