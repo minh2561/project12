@@ -1,5 +1,6 @@
 <?php 
     include "header.php";
+    include "../check_login_admin.php";
 ?>
 <?php 
    
