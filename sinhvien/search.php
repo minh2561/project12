@@ -126,6 +126,7 @@ if (mysqli_num_rows($result7) > 0) {
             </table>
         </div>
     </div>
+ <?php include('../index_sv/footer.php') ?>
     <script>
         var search;
 
@@ -139,4 +140,4 @@ if (mysqli_num_rows($result7) > 0) {
             })
         })
     </script>
-    <?php include('../index_sv/footer.php') ?>
+   
