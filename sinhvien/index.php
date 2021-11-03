@@ -160,7 +160,7 @@ if (mysqli_num_rows($result7) > 0) {
         $.each(data.users,function(i,data){
         $("#tableSubject > tbody").append(`
     <tr>
-        <td>${++i}</td>
+        
         <td>${data.lop_ten_hoc_phan	} </td>
         <td>${data.lop_trang_thai	} </td>
         <td>${data.lop_max_sv} </td>
