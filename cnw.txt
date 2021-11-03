@@ -6,7 +6,6 @@ database
 
 sinh viên 
 +mã sv 
-+email
 +mật khẩu
 +họ tên
 +lớp
@@ -14,14 +13,10 @@ sinh viên
 //+khoa
 +số tín chỉ tối đa ( tính theo cảnh cao )
 + điểm môn học
-+ mã mon hoc
++ mã lớp 
 
-giao vien
-+ma gv
-+email
-+matkhau
-+ma_lop
 
+search 
 
 môn học
 +mã môn học 
@@ -38,10 +33,11 @@ hệ thống đki ( liên kết với 3 thg còn lại ) (admin)
 + mã học phần 
 + tên học phần 
 + ghi chú 
-//+ loại lớp 
++ loại lớp 
 + trạng thái (đã trùng lịch ,đã đầy hay chưa 50/70)
 + số lượng sv tối đa
 + số lượng sv hiện tại
++ khoa
 + khóa ngoại :mã  sinh viên
 + khóa ngoại :mã  môn học
 + khóa ngoại :mã  giáo viên
