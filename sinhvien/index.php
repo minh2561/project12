@@ -2,15 +2,14 @@
 include('../index_sv/header.php');
 include('check_login_sv.php');
 $sv_id=$_SESSION['sinh_vien'];
-$checkTrangThai = '';
 $sql7 = "SELECT DISTINCT * FROM admin";
 $result7 = mysqli_query($conn, $sql7);
 if (mysqli_num_rows($result7) > 0) {
     $row = mysqli_fetch_assoc($result7);
-    $checkTrangThai = $row['trang_thai'];
+    $_SESSION['trang_thai'] = $row['trang_thai'];
 }
-
 ?>
+
 <div class="back_sv">
 <div class="tuychon">
 <nav class="mb-4 px-5 navbar navbar-expand-lg navbar-light pink lighten-4">
@@ -37,10 +36,10 @@ if (mysqli_num_rows($result7) > 0) {
         </ul>
         <form class="form-inline md-form mb-0" >
         <!-- <i class="fas fa-search"></i> -->
-            <input <?php if ($checkTrangThai == 'Đóng') {
+            <input <?php if ($_SESSION['trang_thai'] == 'Đóng') {
                         echo 'disabled';
                     }; ?> class="form-control font-bold " type="text" placeholder="Search" aria-label="Search" onchange="handleGetName(this.value)" aria-label="Search">
-                <button <?php if ($checkTrangThai == 'Đóng') {
+                <button <?php if ($_SESSION['trang_thai'] == 'Đóng') {
                             echo 'disabled';
                         } ?> class="btn btn-danger" id="btnSearch"><a id="hrefSearch">Tìm Kiếm</a></button>
                 
@@ -68,7 +67,7 @@ if (mysqli_num_rows($result7) > 0) {
         }
         ?>
 
-        <?php if ($checkTrangThai == 'Đóng') {
+        <?php if ($_SESSION['trang_thai'] == 'Đóng') {
             echo '<h6>Trạng thái đăng kí học đã hết hạn</h6>';
         } ?>
     </div>
@@ -168,7 +167,7 @@ if (mysqli_num_rows($result7) > 0) {
         <td>${data.lop_ten_phong} </td>
         <td>${data.lop_tuan_hoc} </td>
         <td>${data.lop_gio_hoc	} </td>
-        <td ><a style="color:red" href="addSubject.php?lop_id=${data.lop_id}&sv_id=<?php echo $sv_id ?>">Đăng kí</a></td>
+        <td ><a  style="color:red" href="addSubject.php?lop_id=${data.lop_id}&sv_id=<?php echo $sv_id ?>">Đăng kí</a></td>
     </tr>
     `)  
     })        
