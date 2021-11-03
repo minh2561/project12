@@ -1,6 +1,6 @@
 <?php
 include('../index_sv/header.php');
-
+include('check_login_sv.php');
 $sv_id = $_SESSION['sinh_vien'];
 $checkTrangThai = '';
 $sql7 = "SELECT DISTINCT * FROM admin";
