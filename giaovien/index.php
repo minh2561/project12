@@ -15,11 +15,13 @@ include 'check_login_gv.php';
                 <li class="nav-item ">
                     <a class="nav-link" href="index.php"><i class="far fa-calendar-alt me-1"></i>Môn học</a>
                 </li>
-                <li class="nav-item ">
+<!--                 <li class="nav-item ">
                     <a class="nav-link" href="../index/logout.php"><i class="fas fa-sign-out-alt me-1"></i>Đăng xuất</a>
-                </li>
+                </li> -->
             </ul>
-
+            <form class="d-flex">
+                <a class="nav-link" href="../index/logout.php"><i class="fas fa-sign-out-alt me-1"></i>Đăng xuất</a>
+            </form>
         </div>
     </div>
 </nav>
