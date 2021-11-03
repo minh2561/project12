@@ -1,4 +1,7 @@
-<?php include('../class/header.php')?>
+<?php 
+include('../class/header.php');
+include '../check_login_admin.php';
+?>
 <div class="back_sv">
     <form action="" method="POST" class="container header_addClass">
   
