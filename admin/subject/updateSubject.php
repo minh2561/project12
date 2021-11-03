@@ -1,4 +1,7 @@
-<?php include('../class/header.php') ?>
+<?php 
+include('../class/header.php');
+include '../check_login_admin.php';
+?>
 
 <?php
 $mh_id = $_GET['mh_id'];
