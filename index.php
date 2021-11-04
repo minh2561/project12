@@ -26,7 +26,7 @@
                     <div class="link">             
                         <a href="./index/index_admin.php"><p>Bạn là quản trị viên</p></a>
                         <a href="./index/index_gv.php"><p>Bạn là giảng viên</p></a>
-                        <input type="submit" name="submit">
+                        <input type="submit" name="submit" class="btn btn-outline-secondary">
                     </div>
                     </form>
                 </div>
