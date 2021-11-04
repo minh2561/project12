@@ -54,7 +54,7 @@ if (mysqli_num_rows($result7) > 0) {
             <button class="btn btn-danger"><a href="index.php">Quay lai </a></button>
             <table class="table">
                 <tr>
-                    <th>Học phần</th>
+                    
                     <th>Tên học phần</th>
                     <th>Trạng thái</th>
                     <th>SV tối đa</th>
@@ -63,6 +63,7 @@ if (mysqli_num_rows($result7) > 0) {
                     <th>Tuần học</th>
                     <th>Giờ học</th>
                     <th>Trạng thái đăng ký</th>
+                    <th>Đăng kí</th>
                 </tr>
                 <?php
                 $sv_id = $_SESSION['sinh_vien'];
