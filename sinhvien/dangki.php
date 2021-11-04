@@ -76,7 +76,7 @@ if (mysqli_num_rows($result7) > 0) {
                             <th scope="col">Số sinh viên đã ĐK</th>
                             <th scope="col">Tên phòng</th>
                             <th scope="col">Tuần học</th>
-                            <th scope="col">Gio học</th>
+                            <th scope="col">Giờ học</th>
                             <th scope="col">Trạng thái đăng kí</th>
                             <th scope="col">Đăng kí</th>
                             <th scope="col">Hủy đăng kí</th>
