@@ -51,7 +51,7 @@ if (mysqli_num_rows($result7) > 0) {
 
 <!--     <div class="back_sv"> -->
         <div class="table-responsive container ">
-            <button class="btn btn-danger"><a href="index.php">Quay lai </a></button>
+            <button class="btn btn-danger"><a href="index.php">Quay lại</a></button>
             <table class="table">
                 <tr>
                     
