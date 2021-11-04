@@ -146,6 +146,20 @@ form.d-flex {
     margin-left: 30px;
     margin-bottom: 15px;
 }
+.wrapper-nav {
+    width: 100%;
+}
+
+.header-nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.logout-link {
+    display: flex !important;
+    justify-content: flex-end;
+}
 
 .menu ul{
     list-style-type: none;
