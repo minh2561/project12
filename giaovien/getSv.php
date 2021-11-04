@@ -3,25 +3,23 @@ include '../index_sv/header.php';
 include 'check_login_gv.php';
 ?>
 <div class="back_sv">
-<nav class="navbar navbar-expand-lg navbar-light bg-danger">
-    <div class="container-fluid">
+    <div class="wrapper-nav">
+        <nav class="mb-4 px-5 navbar navbar-expand-lg navbar-light pink lighten-4 header-nav">
+            <div class="logo">
+                <a href="index.php" title="Logo">
+                    <img src="../images/log.png" alt="Restaurant Logo" class="img-responsive">
+                </a>
+            </div>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
-                <li class="nav-item ">
-                    <a class="nav-link" href="index.php"><i class="far fa-calendar-alt me-1"></i>Môn học</a>
-                </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="../index/logout.php"><i class="fas fa-sign-out-alt me-1"></i>Đăng xuất</a>
-                </li>
-            </ul>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse logout-link" id="navbarSupportedContent">
+                <a class="nav-link font-bold" href="../index/logout.php"><i class="fas fa-sign-out-alt" style="margin-right:10px"></i>Đăng xuất</a>
+            </div>
 
-        </div>
+        </nav>
     </div>
-</nav>
 <div class="main-content bg-light">
     <div class="container">
    
