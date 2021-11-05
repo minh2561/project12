@@ -71,19 +71,7 @@ include 'check_login_gv.php';
 </div>
 </div>
 
-<script>
-    var search ;
-function handleGetName(value){
-    search = value;
-}
 
-$(document).ready(async function(){
-    $("#btnSearch").click(function(){
-        $("#hrefSearch").attr("href",`search.php?q=${search}`)
-    })
-})
-
-</script>
 <?php
 include '../index_sv/footer.php';
 ?>
